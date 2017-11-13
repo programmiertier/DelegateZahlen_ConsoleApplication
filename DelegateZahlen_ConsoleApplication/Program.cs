@@ -25,7 +25,12 @@ namespace DelegateZahlen_ConsoleApplication
             zahlenVerarbeitung += new Del_zahlen(Zahlen.quadrieren);
             zahlenVerarbeitung += new Del_zahlen(Zahlen.halbieren);     // wichtig! +=
             zahlenVerarbeitung += new Del_zahlen(Zahlen.wurzel);        // darf unten halt nicht double sein
-            // zahlenVerarbeitung += new Del_zahlen(Zahlen.wurzel);
+            
+            // eine Methode hinzufügen, die noch nicht angelegt ist
+            // anonym. ohne, eine Klasse zu bauen, ohne eine statische Methode
+            // einfach schnell genutzt werden
+            zahlenVerarbeitung += new Del_zahlen((int zahl) => { WriteLine("so, hier nochmal die {0}", zahl); });
+
             // in zahlenVerarbeitung ist jetzt die Aufrufadresse von
             // Zahlen.verdoppeln bekannt
 
